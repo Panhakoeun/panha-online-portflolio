@@ -94,31 +94,148 @@ document.addEventListener('DOMContentLoaded', function () {
     // Contact Form Handling
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
+        const contactFormStatus = document.getElementById('contactFormStatus');
+
+        const showContactStatus = (message, type) => {
+            if (!contactFormStatus) return;
+
+            contactFormStatus.textContent = message;
+            contactFormStatus.classList.remove(
+                'hidden',
+                'border-green-500/30',
+                'bg-green-500/10',
+                'text-green-200',
+                'border-red-500/30',
+                'bg-red-500/10',
+                'text-red-200',
+                'border-yellow-500/30',
+                'bg-yellow-500/10',
+                'text-yellow-100'
+            );
+
+            if (type === 'success') {
+                contactFormStatus.classList.add('border-green-500/30', 'bg-green-500/10', 'text-green-200');
+            } else if (type === 'warning') {
+                contactFormStatus.classList.add('border-yellow-500/30', 'bg-yellow-500/10', 'text-yellow-100');
+            } else {
+                contactFormStatus.classList.add('border-red-500/30', 'bg-red-500/10', 'text-red-200');
+            }
+        };
+
+        contactForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
+            if (!submitBtn) return;
 
-            // Loading State
+            const originalBtnText = submitBtn.innerHTML;
+            const formData = new FormData(this);
+
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> Sending...';
 
-            // Simulate Success
-            setTimeout(() => {
-                submitBtn.innerHTML = '<i class="fas fa-check mr-2"></i> Message Sent!';
-                submitBtn.classList.remove('btn-primary', 'bg-indigo-600');
-                submitBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            if (contactFormStatus) {
+                contactFormStatus.classList.add('hidden');
+                contactFormStatus.textContent = '';
+            }
+
+            if (window.location.protocol === 'file:') {
+                const senderName = formData.get('name') || 'Portfolio Visitor';
+                const senderEmail = formData.get('email') || '';
+                const senderMessage = formData.get('message') || '';
+                const mailtoSubject = encodeURIComponent(`Portfolio Message from ${senderName}`);
+                const mailtoBody = encodeURIComponent(
+                    `Name: ${senderName}\nEmail: ${senderEmail}\n\nMessage:\n${senderMessage}`
+                );
+
+                window.location.href = `mailto:panha.koeun142007@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+                showContactStatus(
+                    'Your email app was opened because this page is running as a local file. Publish the site or run it on a web server for direct form sending.',
+                    'warning'
+                );
+
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                return;
+            }
+
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        Accept: 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Request failed with status ${response.status}`);
+                }
 
                 this.reset();
+                showContactStatus('Your message was sent successfully. I will get back to you soon.', 'success');
+            } catch (error) {
+                showContactStatus(
+                    'Sending failed right now. Please try again from the live website or email panha.koeun142007@gmail.com directly.',
+                    'error'
+                );
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }
+        });
+    }
 
+    // CV Download Handler
+    const downloadCvBtn = document.getElementById('downloadCvBtn');
+    if (downloadCvBtn) {
+        downloadCvBtn.addEventListener('click', async function (e) {
+            const pdfPath = this.dataset.pdfPath;
+            const downloadName = this.dataset.downloadName || 'Panha-Koeun-CV.pdf';
+
+            if (!pdfPath) return;
+
+            e.preventDefault();
+
+            const originalMarkup = this.innerHTML;
+            const originalClasses = this.className;
+
+            this.classList.add('pointer-events-none', 'opacity-80');
+            this.innerHTML = 'Downloading... <i class="fas fa-spinner fa-spin ml-2 text-sm"></i>';
+
+            try {
+                const response = await fetch(pdfPath, {
+                    cache: 'no-store'
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Download failed with status ${response.status}`);
+                }
+
+                const pdfBlob = await response.blob();
+                const blobUrl = window.URL.createObjectURL(pdfBlob);
+                const tempLink = document.createElement('a');
+
+                tempLink.href = blobUrl;
+                tempLink.download = downloadName;
+                tempLink.style.display = 'none';
+                document.body.appendChild(tempLink);
+                tempLink.click();
+                tempLink.remove();
+                window.URL.revokeObjectURL(blobUrl);
+
+                this.innerHTML = 'Download Complete <i class="fas fa-check ml-2 text-sm"></i>';
+            } catch (error) {
+                // Fall back to the native browser download/open behavior.
+                window.open(pdfPath, '_blank', 'noopener');
+                this.innerHTML = 'Opened PDF <i class="fas fa-external-link-alt ml-2 text-sm"></i>';
+            } finally {
                 setTimeout(() => {
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = originalBtnText;
-                    submitBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
-                    submitBtn.classList.add('btn-primary');
-                }, 3000);
-            }, 1500);
+                    this.className = originalClasses;
+                    this.innerHTML = originalMarkup;
+                }, 2200);
+            }
         });
     }
 

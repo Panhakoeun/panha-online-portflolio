@@ -31,7 +31,7 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
@@ -177,7 +177,7 @@
               class="relative z-10 w-full h-full rounded-2xl overflow-hidden glass p-2 rotate-3 hover:rotate-0 transition-all duration-500"
             >
               <img
-                src="./photo_2025-10-22_10-11-49.jpg"
+                src="assets/images/profile/photo_2025-10-22_10-11-49.jpg"
                 alt="Panha Profile"
                 class="w-full h-full object-cover rounded-xl filter brightness-90 contrast-125"
               />
@@ -217,7 +217,7 @@
               ></div>
               <div class="relative rounded-2xl overflow-hidden aspect-square">
                 <img
-                  src="./photo_2025-10-22_10-11-49.jpg"
+                  src="assets/images/profile/photo_2025-10-22_10-11-49.jpg"
                   alt="Profile"
                   class="w-full h-full object-cover transform transition duration-500 group-hover:scale-110"
                 />
@@ -253,9 +253,12 @@
               </div>
 
                     <a
-                      href="./PANHA-KOEUN-CV-Latest.pdf"
+                      id="downloadCvBtn"
+                      href="assets/docs/PANHA-KOEUN-CV-Latest.pdf"
                       download="PANHA-KOEUN-CV-Latest.pdf"
                       type="application/pdf"
+                      data-pdf-path="assets/docs/PANHA-KOEUN-CV-Latest.pdf"
+                      data-download-name="PANHA-KOEUN-CV-Latest.pdf"
                       class="inline-flex items-center text-indigo-400 hover:text-indigo-300 font-medium transition"
                     >
                       Download CV <i class="fas fa-arrow-right ml-2 text-sm"></i>
@@ -529,7 +532,7 @@
                 >
               </div>
               <img
-                src="./project1.png"
+                src="assets/images/projects/project1.png"
                 alt="Shoes Shop"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -568,7 +571,7 @@
                 >
               </div>
               <img
-                src="./project2.png"
+                src="assets/images/projects/project2.png"
                 alt="Face Detection"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -613,7 +616,7 @@
                 >
               </div>
               <img
-                src="./project4.png"
+                src="assets/images/projects/project4.png"
                 alt="Face Detection"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -655,7 +658,7 @@
                 >
               </div>
               <img
-                src="./project5.png"
+                src="assets/images/projects/project5.png"
                 alt="Face Detection"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -695,7 +698,7 @@
                 >
               </div>
               <img
-                src="./preylang.png"
+                src="assets/images/projects/preylang.png"
                 alt="Face Recognition"
                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
               />
@@ -795,30 +798,63 @@
               </div>
 
               <!-- Social Links -->
-              <div class="flex space-x-4 pt-4">
+              <div class="flex flex-wrap gap-4 pt-4">
                 <a
-                  href="#"
-                  class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all"
+                  href="https://github.com/Panhakoeun?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Work or School"
+                  class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-white hover:bg-white/20 hover:scale-105 transition-all"
                 >
                   <i class="fab fa-github"></i>
+                  <span class="text-sm font-medium">GitHub Work/School</span>
                 </a>
                 <a
-                  href="#"
+                  href="https://github.com/panhakoeun142007-creator?tab=repositories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Personal"
+                  class="inline-flex items-center gap-2 rounded-full bg-white/5 px-4 py-2 text-white hover:bg-white/20 hover:scale-105 transition-all"
+                >
+                  <i class="fab fa-github"></i>
+                  <span class="text-sm font-medium">GitHub Personal</span>
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/panha-koeun-b15a71399"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
                   class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all"
                 >
                   <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a
-                  href="#"
+                  href="https://t.me/Raphi_nhaz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Telegram"
                   class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white/20 hover:scale-110 transition-all"
                 >
-                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-telegram-plane"></i>
                 </a>
               </div>
             </div>
 
             <div class="glass p-8 rounded-3xl" data-aos="fade-left">
-              <form id="contactForm" class="space-y-6">
+              <form
+                id="contactForm"
+                class="space-y-6"
+                action="https://formsubmit.co/panha.koeun142007@gmail.com"
+                method="POST"
+              >
+                <input type="hidden" name="_subject" value="New Portfolio Message" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                  type="hidden"
+                  name="_autoresponse"
+                  value="Thank you for reaching out to Panha. Your message has been received successfully."
+                />
                 <div>
                   <label for="name" class="block text-sm text-gray-400 mb-2"
                     >Name</label
@@ -826,6 +862,8 @@
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    required
                     class="w-full px-4 py-3 rounded-xl input-field focus:outline-none"
                     placeholder="Your name"
                   />
@@ -837,6 +875,8 @@
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    required
                     class="w-full px-4 py-3 rounded-xl input-field focus:outline-none"
                     placeholder="your@email.com"
                   />
@@ -847,7 +887,9 @@
                   >
                   <textarea
                     id="message"
+                    name="message"
                     rows="4"
+                    required
                     class="w-full px-4 py-3 rounded-xl input-field focus:outline-none resize-none"
                     placeholder="Tell me about your project..."
                   ></textarea>
@@ -858,6 +900,11 @@
                 >
                   Send Message
                 </button>
+                <p
+                  id="contactFormStatus"
+                  class="hidden rounded-xl border px-4 py-3 text-sm"
+                  aria-live="polite"
+                ></p>
               </form>
             </div>
           </div>
@@ -870,7 +917,7 @@
       <div class="container mx-auto px-6">
         <h2 class="text-2xl font-bold mb-6 gradient-text">PANHA.DEV</h2>
         <p class="text-gray-500 mb-6">
-          Designed & Built with ❤️ by Panha Koeun
+          Designed & Built with by Panha Koeun
         </p>
         <p class="text-gray-600 text-sm">
           &copy; <span id="currentYear"></span> All rights reserved.
@@ -888,7 +935,7 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
     <script>
       // Initialize AOS (Animate On Scroll)
       AOS.init({
