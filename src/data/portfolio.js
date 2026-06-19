@@ -6,7 +6,7 @@ export const profile = {
   email: "panha.koeun142007@gmail.com",
   phone: "+855 889 756 260",
   image: "/assets/images/profile/photo_2025-10-22_10-11-49.jpg",
-  cv: "/assets/docs/KOEUN-Panha-CL-CV.pdf",
+  cv: "/assets/docs/CV-PANHA-KOEUN.pdf",
 };
 
 export const navItems = [

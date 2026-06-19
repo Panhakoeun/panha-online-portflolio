@@ -20,7 +20,7 @@ const downloadCv = async () => {
     const link = document.createElement("a");
 
     link.href = blobUrl;
-    link.download = "KOEUN-Panha-CL-CV.pdf";
+    link.download = "CV-PANHA-KOEUN.pdf";
     link.click();
     window.URL.revokeObjectURL(blobUrl);
     downloadText.value = "Download Complete";
