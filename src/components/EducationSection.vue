@@ -1,5 +1,9 @@
 <script setup>
-import { education, educationHighlights } from "../data/portfolio";
+import { computed } from "vue";
+import { education, educationHighlights, projects } from "../data/portfolio";
+
+const projectCount = computed(() => projects.length);
+
 </script>
 
 <template>
@@ -25,7 +29,7 @@ import { education, educationHighlights } from "../data/portfolio";
                 <div class="mb-4 inline-flex items-center rounded-full bg-indigo-500/10 px-3 py-1 text-sm font-medium text-indigo-300">
                   {{ education.period }}
                 </div>
-                <h3 class="text-2xl font-bold text-white">{{ education.school }}</h3>
+                <h3 class="text-2xl font-bold" style="color: #0f172a;">{{ education.school }}</h3>
                 <p class="mt-2 text-sm uppercase tracking-[0.25em] text-pink-300">{{ education.program }}</p>
                 <p class="mt-4 leading-relaxed text-gray-400">{{ education.description }}</p>
                 <div class="mt-6 flex flex-wrap gap-3">
@@ -39,12 +43,12 @@ import { education, educationHighlights } from "../data/portfolio";
         <div class="space-y-6" data-aos="fade-left">
           <div class="glass rounded-3xl p-8">
             <p class="text-sm uppercase tracking-[0.3em] text-gray-400">Education Highlights</p>
-            <h3 class="mt-4 text-2xl font-bold text-white">What I am developing through study</h3>
+            <h3 class="mt-4 text-2xl font-bold" style="color: #0f172a;">What I am developing through study</h3>
             <div class="mt-6 space-y-4">
               <div v-for="item in educationHighlights" :key="item.title" class="education-highlight">
                 <i :class="item.icon"></i>
                 <div>
-                  <p class="font-semibold text-white">{{ item.title }}</p>
+                  <p class="font-semibold" style="color: #0f172a;">{{ item.title }}</p>
                   <p class="text-sm leading-relaxed text-gray-400">{{ item.text }}</p>
                 </div>
               </div>
@@ -54,12 +58,12 @@ import { education, educationHighlights } from "../data/portfolio";
           <div class="glass rounded-3xl p-8">
             <p class="text-sm uppercase tracking-[0.3em] text-gray-400">Current Focus</p>
             <div class="mt-6 grid grid-cols-2 gap-4">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p class="text-3xl font-bold text-white">2+</p>
+              <div class="rounded-2xl p-5" style="border: 1px solid rgba(99,102,241,0.15); background: rgba(99,102,241,0.05);">
+                <p class="text-3xl font-bold" style="color: #0f172a;">2+</p>
                 <p class="mt-2 text-sm text-gray-400">Years of active learning</p>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <p class="text-3xl font-bold text-white">5+</p>
+              <div class="rounded-2xl p-5" style="border: 1px solid rgba(99,102,241,0.15); background: rgba(99,102,241,0.05);">
+                <p class="text-3xl font-bold" style="color: #0f172a;">{{ projectCount }}+</p>
                 <p class="mt-2 text-sm text-gray-400">Projects supporting growth</p>
               </div>
             </div>

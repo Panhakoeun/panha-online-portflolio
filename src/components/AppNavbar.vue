@@ -47,7 +47,8 @@ onUnmounted(() => {
         </div>
 
         <button
-          class="md:hidden text-white focus:outline-none"
+          class="md:hidden focus:outline-none"
+          style="color: #0f172a;"
           type="button"
           aria-label="Toggle navigation"
           :aria-expanded="isMenuOpen"
@@ -66,7 +67,8 @@ onUnmounted(() => {
           v-for="(item, index) in navItems"
           :key="item.href"
           :href="item.href"
-          class="block py-3 text-gray-300 hover:text-white"
+          class="block py-3 hover:text-indigo-300"
+          style="color: #64748b;"
           :class="{ 'border-b border-gray-700': index < navItems.length - 1 }"
           @click="closeMenu"
         >

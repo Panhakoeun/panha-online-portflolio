@@ -1,6 +1,8 @@
 <script setup>
-import { ref } from "vue";
-import { profile } from "../data/portfolio";
+import { ref, computed } from "vue";
+import { profile, projects } from "../data/portfolio";
+
+const projectCount = computed(() => `${projects.length} Completed`);
 
 const downloadText = ref("Download CV");
 const isDownloading = ref(false);
@@ -57,18 +59,18 @@ const downloadCv = async () => {
             <h3 class="text-xl text-indigo-400 mb-4 font-mono">{{ profile.title }}</h3>
             <p class="text-gray-400 mb-6 leading-relaxed">
               My journey in web development started in 2025 at
-              <span class="text-white font-medium">Passerelles Numeriques Cambodia</span>. I'm passionate
+              <span style="color: #0f172a; font-weight: 500;">Passerelles Numeriques Cambodia</span>. I'm passionate
               about building scalable software and creating effective solutions that help people's lives.
             </p>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
-              <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div class="p-4 rounded-xl" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12);">
                 <p class="text-gray-400 text-sm">Experience</p>
-                <p class="text-xl font-bold text-white">2+ Years</p>
+                <p class="text-xl font-bold" style="color: #0f172a;">2+ Years</p>
               </div>
-              <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+              <div class="p-4 rounded-xl" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12);">
                 <p class="text-gray-400 text-sm">Projects</p>
-                <p class="text-xl font-bold text-white">5+ Completed</p>
+                <p class="text-xl font-bold" style="color: #0f172a;">{{ projectCount }}</p>
               </div>
             </div>
 

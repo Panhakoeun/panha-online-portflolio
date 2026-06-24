@@ -62,7 +62,7 @@ const submitForm = async () => {
 </script>
 
 <template>
-  <section id="contact" class="py-24 relative bg-black/20">
+  <section id="contact" class="py-24 relative">
     <div class="container mx-auto px-6">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-16" data-aos="fade-up">
@@ -78,7 +78,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Email</h4>
-                <p class="text-white font-medium break-all">{{ profile.email }}</p>
+                <p class="font-medium break-all" style="color: #0f172a;">{{ profile.email }}</p>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Phone</h4>
-                <p class="text-white font-medium">{{ profile.phone }}</p>
+                <p class="font-medium" style="color: #0f172a;">{{ profile.phone }}</p>
               </div>
             </div>
 
@@ -98,7 +98,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Location</h4>
-                <p class="text-white font-medium">{{ profile.location }}</p>
+                <p class="font-medium" style="color: #0f172a;">{{ profile.location }}</p>
               </div>
             </div>
 
@@ -110,7 +110,8 @@ const submitForm = async () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 :aria-label="social.label"
-                class="inline-flex items-center justify-center text-white hover:bg-white/20 transition-all"
+                class="inline-flex items-center justify-center hover:bg-white/20 transition-all"
+                style="color: #6366f1;"
                 :class="social.wide ? 'gap-2 rounded-full bg-white/5 px-4 py-2 hover:scale-105' : 'w-10 h-10 rounded-full bg-white/5 hover:scale-110'"
               >
                 <i :class="social.icon"></i>

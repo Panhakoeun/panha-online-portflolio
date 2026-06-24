@@ -49,7 +49,7 @@ onUnmounted(() => {
         >
           Welcome to my portfolio
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" style="color: #0f172a;">
           I'm {{ profile.name }} <br />
           <span class="gradient-text">{{ typedText }}</span><span class="cursor">|</span>
         </h1>
@@ -66,7 +66,8 @@ onUnmounted(() => {
           </a>
           <a
             href="#contact"
-            class="px-8 py-3 rounded-full font-bold tracking-wide border border-white/20 hover:bg-white/5 text-white transition-all"
+            class="px-8 py-3 rounded-full font-bold tracking-wide border hover:bg-white/20 transition-all"
+            style="color: #6366f1; border-color: rgba(99,102,241,0.35);"
           >
             Contact Me
           </a>
@@ -75,7 +76,7 @@ onUnmounted(() => {
 
       <div class="relative hidden md:block" data-aos="fade-left">
         <div class="relative w-full aspect-square max-w-md mx-auto floating">
-          <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-pink-500 rounded-full blur-[60px] opacity-40"></div>
+          <div class="absolute inset-0 bg-gradient-to-tr from-indigo-500 to-pink-500 rounded-full blur-[60px] opacity-25 group-hover:opacity-50 transition duration-1000"></div>
           <div class="relative z-10 w-full h-full rounded-2xl overflow-hidden glass p-2 rotate-3 hover:rotate-0 transition-all duration-500">
             <img
               :src="profile.image"
@@ -89,7 +90,7 @@ onUnmounted(() => {
 
     <a
       href="#about"
-      class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/50 hover:text-white transition animate-bounce"
+      style="color: rgba(99,102,241,0.5);"
       aria-label="Scroll to about section"
     >
       <i class="fas fa-chevron-down text-2xl"></i>
