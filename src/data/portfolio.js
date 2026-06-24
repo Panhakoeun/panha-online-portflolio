@@ -99,6 +99,13 @@ export const projects = [
     description: "Coffee shop POS with product management and customer QR ordering.",
     tags: ["React.JS", "TypeScript", "Laravel", "Bootstrap", "JavaScript", "PHP"],
   },
+  {
+    title: "Movie Shelf",
+    image: "/assets/images/projects/movie-shelf.png",
+    link: "https://movie-vue-practice-panha.vercel.app/",
+    description: "A comprehensive movie library application featuring search, filtering, and management capabilities.",
+    tags: ["Vue.JS"],
+  },
 ];
 
 export const socials = [
