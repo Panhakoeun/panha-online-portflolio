@@ -59,18 +59,18 @@ const downloadCv = async () => {
             <h3 class="text-xl text-indigo-400 mb-4 font-mono">{{ profile.title }}</h3>
             <p class="text-gray-400 mb-6 leading-relaxed">
               My journey in web development started in 2025 at
-              <span style="color: #0f172a; font-weight: 500;">Passerelles Numeriques Cambodia</span>. I'm passionate
+              <span style="color: var(--text-main); font-weight: 500;">Passerelles Numeriques Cambodia</span>. I'm passionate
               about building scalable software and creating effective solutions that help people's lives.
             </p>
 
             <div class="grid grid-cols-2 gap-6 mb-8">
-              <div class="p-4 rounded-xl" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12);">
+              <div class="p-4 rounded-xl" style="background: var(--panel-tint); border: 1px solid var(--panel-border);">
                 <p class="text-gray-400 text-sm">Experience</p>
-                <p class="text-xl font-bold" style="color: #0f172a;">2+ Years</p>
+                <p class="text-xl font-bold" style="color: var(--text-main);">2+ Years</p>
               </div>
-              <div class="p-4 rounded-xl" style="background: rgba(99,102,241,0.06); border: 1px solid rgba(99,102,241,0.12);">
+              <div class="p-4 rounded-xl" style="background: var(--panel-tint); border: 1px solid var(--panel-border);">
                 <p class="text-gray-400 text-sm">Projects</p>
-                <p class="text-xl font-bold" style="color: #0f172a;">{{ projectCount }}</p>
+                <p class="text-xl font-bold" style="color: var(--text-main);">{{ projectCount }}</p>
               </div>
             </div>
 

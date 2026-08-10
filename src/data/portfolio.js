@@ -106,6 +106,20 @@ export const projects = [
     description: "A comprehensive movie library application featuring search, filtering, and management capabilities.",
     tags: ["Vue.JS"],
   },
+  {
+    title: "E-commerce CRUD Website",
+    image: "/assets/images/projects/project3.png",
+    link: "#",
+    description: "A full-stack E-Commerce Management System with user authentication and RESTful APIs connecting the frontend and backend.",
+    tags: ["Vue.JS", "Laravel", "MySQL"],
+  },
+  {
+    title: "Krousar Thmey NGO",
+    image: "/assets/images/projects/krousar-thmey.png",
+    link: "https://krousar-thmey.sreydeth.site/",
+    description: "A full-stack CRUD web application for Krousar Thmey NGO, built and deployed on AWS with a 6-member team.",
+    tags: ["Laravel", "Blade", "MySQL"],
+  },
 ];
 
 export const socials = [

@@ -49,7 +49,7 @@ onUnmounted(() => {
         >
           Welcome to my portfolio
         </div>
-        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" style="color: #0f172a;">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight" style="color: var(--text-main);">
           I'm {{ profile.name }} <br />
           <span class="gradient-text">{{ typedText }}</span><span class="cursor">|</span>
         </h1>
@@ -67,7 +67,7 @@ onUnmounted(() => {
           <a
             href="#contact"
             class="px-8 py-3 rounded-full font-bold tracking-wide border hover:bg-white/20 transition-all"
-            style="color: #6366f1; border-color: rgba(99,102,241,0.35);"
+            style="color: var(--primary); border-color: rgba(99,102,241,0.35);"
           >
             Contact Me
           </a>

@@ -107,12 +107,12 @@ button {
 .rounded-xl { border-radius: 0.75rem; }
 .rounded-2xl { border-radius: 1rem; }
 .rounded-3xl { border-radius: 1.5rem; }
-.border { border: 1px solid rgba(99, 102, 241, 0.15); }
-.border-b { border-bottom: 1px solid rgba(99, 102, 241, 0.15); }
-.border-gray-700 { border-color: #e2e8f0; }
-.border-white\/5 { border-color: rgba(99, 102, 241, 0.08); }
-.border-white\/10 { border-color: rgba(99, 102, 241, 0.12); }
-.border-white\/20 { border-color: rgba(99, 102, 241, 0.2); }
+.border { border: 1px solid var(--border-color); }
+.border-b { border-bottom: 1px solid var(--border-color); }
+.border-gray-700 { border-color: var(--border-strong); }
+.border-white\/5 { border-color: var(--border-color); }
+.border-white\/10 { border-color: var(--border-color); }
+.border-white\/20 { border-color: var(--border-strong); }
 .border-teal-500\/20 { border-color: rgba(20, 184, 166, 0.2); }
 .border-teal-500\/30 { border-color: rgba(20, 184, 166, 0.3); }
 .border-indigo-500\/20 { border-color: rgba(20, 184, 166, 0.2); }
@@ -121,12 +121,12 @@ button {
 .border-red-500\/30 { border-color: rgba(239, 68, 68, 0.3); }
 .border-yellow-500\/30 { border-color: rgba(234, 179, 8, 0.3); }
 
-.bg-black\/20 { background: rgba(99, 102, 241, 0.05); }
-.bg-black\/40 { background: rgba(99, 102, 241, 0.07); }
-.bg-black\/50 { background: rgba(99, 102, 241, 0.08); }
-.bg-white\/5 { background: rgba(99, 102, 241, 0.04); }
-.bg-white\/10 { background: rgba(99, 102, 241, 0.06); }
-.bg-white\/20 { background: rgba(99, 102, 241, 0.1); }
+.bg-black\/20 { background: var(--section-tint); }
+.bg-black\/40 { background: var(--section-tint); }
+.bg-black\/50 { background: rgba(15, 23, 42, 0.55); }
+.bg-white\/5 { background: var(--surface-1); }
+.bg-white\/10 { background: var(--surface-2); }
+.bg-white\/20 { background: var(--surface-3); }
 .bg-teal-500\/10 { background: rgba(20, 184, 166, 0.1); }
 .bg-teal-500\/20 { background: rgba(20, 184, 166, 0.2); }
 .bg-indigo-500\/10 { background: rgba(20, 184, 166, 0.1); }
@@ -202,12 +202,12 @@ button {
 .leading-relaxed { line-height: 1.625; }
 .break-all { word-break: break-all; }
 
-.text-white { color: #0f172a; }
-.text-white\/50 { color: rgba(15, 23, 42, 0.5); }
-.text-gray-300 { color: #475569; }
-.text-gray-400 { color: #64748b; }
-.text-gray-500 { color: #94a3b8; }
-.text-gray-600 { color: #94a3b8; }
+.text-white { color: #ffffff; }
+.text-white\/50 { color: rgba(255, 255, 255, 0.5); }
+.text-gray-300 { color: var(--text-muted); }
+.text-gray-400 { color: var(--text-muted); }
+.text-gray-500 { color: var(--text-faint); }
+.text-gray-600 { color: var(--text-faint); }
 .text-primary { color: #6366f1; }
 .text-indigo-300 { color: #6366f1; }
 .text-indigo-400 { color: #6366f1; }

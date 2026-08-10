@@ -36,7 +36,7 @@ import { projects } from "../data/portfolio";
             />
           </div>
           <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">{{ project.title }}</h3>
+            <h3 class="text-xl font-bold mb-2">{{ project.title }}</h3>
             <p class="text-gray-400 text-sm mb-4">{{ project.description }}</p>
             <div class="flex flex-wrap gap-2 text-xs">
               <span

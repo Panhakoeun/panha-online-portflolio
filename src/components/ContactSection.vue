@@ -78,7 +78,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Email</h4>
-                <p class="font-medium break-all" style="color: #0f172a;">{{ profile.email }}</p>
+                <p class="font-medium break-all" style="color: var(--text-main);">{{ profile.email }}</p>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Phone</h4>
-                <p class="font-medium" style="color: #0f172a;">{{ profile.phone }}</p>
+                <p class="font-medium" style="color: var(--text-main);">{{ profile.phone }}</p>
               </div>
             </div>
 
@@ -98,7 +98,7 @@ const submitForm = async () => {
               </div>
               <div>
                 <h4 class="text-sm text-gray-400 uppercase tracking-wide">Location</h4>
-                <p class="font-medium" style="color: #0f172a;">{{ profile.location }}</p>
+                <p class="font-medium" style="color: var(--text-main);">{{ profile.location }}</p>
               </div>
             </div>
 

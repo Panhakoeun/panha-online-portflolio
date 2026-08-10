@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
 import { navItems, profile } from "../data/portfolio";
+import ThemeToggle from "./ThemeToggle.vue";
 
 const isMenuOpen = ref(false);
 const isScrolled = ref(false);
@@ -35,7 +36,7 @@ onUnmounted(() => {
           {{ profile.brand }}
         </a>
 
-        <div class="hidden md:flex space-x-8">
+        <div class="hidden md:flex items-center space-x-8">
           <a
             v-for="item in navItems"
             :key="item.href"
@@ -46,16 +47,20 @@ onUnmounted(() => {
           </a>
         </div>
 
-        <button
-          class="md:hidden focus:outline-none"
-          style="color: #0f172a;"
-          type="button"
-          aria-label="Toggle navigation"
-          :aria-expanded="isMenuOpen"
-          @click="isMenuOpen = !isMenuOpen"
-        >
-          <i class="fas text-2xl" :class="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
-        </button>
+        <div class="flex items-center gap-4">
+          <ThemeToggle />
+
+          <button
+            class="md:hidden focus:outline-none"
+            style="color: var(--text-main);"
+            type="button"
+            aria-label="Toggle navigation"
+            :aria-expanded="isMenuOpen"
+            @click="isMenuOpen = !isMenuOpen"
+          >
+            <i class="fas text-2xl" :class="isMenuOpen ? 'fa-times' : 'fa-bars'"></i>
+          </button>
+        </div>
       </div>
 
       <div
@@ -68,7 +73,7 @@ onUnmounted(() => {
           :key="item.href"
           :href="item.href"
           class="block py-3 hover:text-indigo-300"
-          style="color: #64748b;"
+          style="color: var(--text-muted);"
           :class="{ 'border-b border-gray-700': index < navItems.length - 1 }"
           @click="closeMenu"
         >
