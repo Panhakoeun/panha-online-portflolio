@@ -483,3 +483,39 @@ footer {
 :root[data-theme="dark"] .theme-toggle-icon-moon {
     color: #cbd5e1;
 }
+
+/* Scroll Reveal (data-aos) */
+[data-aos] {
+    opacity: 0;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity, transform;
+}
+
+[data-aos="fade-up"] {
+    transform: translateY(48px);
+}
+
+[data-aos="fade-down"] {
+    transform: translateY(-48px);
+}
+
+[data-aos="fade-left"] {
+    transform: translateX(48px);
+}
+
+[data-aos="fade-right"] {
+    transform: translateX(-48px);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] {
+        transition: none !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
